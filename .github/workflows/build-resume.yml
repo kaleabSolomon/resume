@@ -31,10 +31,10 @@ jobs:
           BRANCH_NAME="${GITHUB_REF_NAME}"
           if [ "$BRANCH_NAME" = "master" ]; then
             echo "name=resume" >> $GITHUB_OUTPUT
-            echo "pdf-name=Kaleab_Alemayehu_Resume.pdf" >> $GITHUB_OUTPUT
+            echo "pdf-name=Kaleab_Solomon_Resume.pdf" >> $GITHUB_OUTPUT
           else
             echo "name=resume-${BRANCH_NAME}" >> $GITHUB_OUTPUT
-            echo "pdf-name=Kaleab_Alemayehu_Resume_${BRANCH_NAME}.pdf" >> $GITHUB_OUTPUT
+            echo "pdf-name=Kaleab_Solomon_Resume_${BRANCH_NAME}.pdf" >> $GITHUB_OUTPUT
           fi
 
       - name: Rename PDF

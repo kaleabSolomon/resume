@@ -1,6 +1,6 @@
 %-------------------------
 % Resume in Latex
-% Author : Kaleab Alemayehu
+% Author : Kaleab Solomon
 % Based off of: https://github.com/jakegut/resume
 % License : MIT
 %------------------------
@@ -90,6 +90,14 @@
     \end{tabular*}\vspace{-7pt}
 }
 
+\newcommand{\resumeProject}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} --- \small#2 & \small#4 \\
+      \textit{\small#3} & \\
+    \end{tabular*}\vspace{-7pt}
+}
+
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
@@ -106,17 +114,18 @@
 \begin{document}
 
 %----------HEADING----------
-% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
-%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
-% \end{tabular*}
-
 \begin{center}
-    \textbf{\Huge \scshape Kaleab A. Kelkay} \\ \vspace{1pt}
-    \small +251-942-323-094 $|$ \href{mailto:kaleabalemayehu04@gmail.com}{\underline{kaleabalemayehu04@gmail.com}} $|$ 
-    \href{https://www.linkedin.com/in/kaleab-a-kelkay-a3218422a/}{\underline{https://www.linkedin.com/in/kaleab-a-kelkay-a3218422a/}} $|$
-    \href{https://github.com/kaleabAlemayehu}{\underline{github.com/kaleabAlemayehu}}
+    \textbf{\Huge \scshape Kaleab Solomon} \\ \vspace{1pt}
+    \small Addis Ababa, Ethiopia $|$ +251-942-102-626 $|$ \href{mailto:kaleabslmn@gmail.com}{\underline{kaleabslmn@gmail.com}} $|$
+    \href{https://kaleab.site}{\underline{Portfolio}} $|$
+    \href{https://www.linkedin.com/in/kaleab-solomon-abebe/}{\underline{LinkedIn}} $|$
+    \href{https://github.com/kaleabSolomon}{\underline{GitHub}}
 \end{center}
+
+
+%-----------SUMMARY-----------
+\section{Summary}
+  \small{Software engineer with experience in tackling complex challenges. I've contributed to projects across diverse industries, multiple countries, remote and onsite, building reliable solutions that enhance user experiences.}
 
 
 %-----------EDUCATION-----------
@@ -124,170 +133,109 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {Bahir Dar University}{Bahir Dar, Ethiopia}
-      {Bachelor of Engineering in Software Engineering}{Jun. 2021 -- Jun 2025}
+      {Bachelor of Software Engineering}{}
   \resumeSubHeadingListEnd
 
 
 %-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
-  \resumeSubheading
-    {Mid-Level Backend Developer}{Nov 2025 -- Present}
-    {Awura Technologies}{Addis Ababa, Ethiopia}
-    \resumeItemListStart
-      \resumeItem{Led the backend team in designing and delivering the core P2P financial rotation platform, coordinating architecture decisions and ensuring consistent implementation across the team.}
-      \resumeItem{Engineered a high-performance gRPC API using ConnectRPC and Go, implementing a modular, event-driven architecture to orchestrate real-time P2P payment flows and ledger synchronization.}
-      \resumeItem{Architected an asynchronous notification and state-management system to handle high-concurrency contributions, triggering low-latency payout events upon successful epoch completion.}
-      \resumeItem{Developed a cryptographically secure selection engine utilizing CSPRNG primitives to ensure verifiable fairness and transparency in automated rotating resource allocation cycles.}
-      \resumeItem{Designed a scalable modular monolith for peer-to-peer financial rotation, integrating identity verification and OTP-secured transactions within a strictly typed, event-sourced backend.}
-      \resumeItem{Engineered a real-time bid system using Gorilla WebSocket to stream live bids to connected clients, handling high-concurrency bid submissions and automatically selecting the highest bid upon auction completion.}
-      \resumeItem{Implemented a RESTful API using state machines and event-driven architecture, publishing messages to RabbitMQ for user notifications.}
-      \resumeItem{Implemented a Payment Service that is idempotent and uses eventual consistency to ensure data integrity.}
-      \resumeItem{Designed a reliable and configurable cron job system with dynamic worker pools to process background tasks and perform batched database updates.}
-      \resumeItem{Applied optimistic locking to maintain data consistency and prevent race conditions in concurrent operations.}
-      \resumeItem{Engineered a time-scheduled CMS content lifecycle worker using Asynq to automatically trigger state transitions (activation and expiration) for advertisements and community media based on scheduled start and end timestamps.}
-      \resumeItem{Built an automated referral reward engine and state machine supporting real-time eligibility tracking, claim verification, and administrative fulfillment workflows.}
-      \resumeItem{Engineered automated bot participants and system liquidity actors to dynamically engage in auction bidding and drive continuous round execution.}
-      \resumeItem{Established a containerized testing pipeline leveraging \texttt{testcontainers-go} for automated integration testing against ephemeral PostgreSQL and Redis Docker containers.}
-    \resumeItemListEnd
     \resumeSubheading
-      {Fullstack Developer}{Nov 2025 -- Feb 2026}
-      {Alet-Systems ( MSA with Lakipay )}{Addis Ababa, Ethiopia}
+      {Backend Engineer}{Jan 2026 -- Present}
+      {EllaTech}{Addis Ababa, Ethiopia}
       \resumeItemListStart
-        \resumeItem{Implemented a robust RESTful API for a gifter mini app on Lakipay, enabling users to send gifts to influencers.}
-        \resumeItem{Designed dynamic worker pools to consume webhook requests from Redis queues and batch database operations, preventing database overload.}
-        \resumeItem{Developed a Golang SDK for seamless Lakipay integration.}
-        \resumeItem{Built a real-time overlay system for OBS and TikTok Studio using WebSockets to display animated overlays when gifts are sent.}
-        \resumeItem{Implemented an admin panel for the gifter mini app within the Lakipay Admin Panel using Next.js, ensuring a smooth administrative experience.}
+        \resumeItem{Developed and maintained Dockerized NestJS microservices with MongoDB, designed for scalable, distributed systems.}
+        \resumeItem{Implemented gRPC and RabbitMQ based inter-service communication, improving service-to-service efficiency and reducing HTTP overhead.}
+        \resumeItem{Implemented a multi-tier subscription system with billing, scheduled events using BullMQ, graceful downgrades as well as tier-based access control.}
+        \resumeItem{Owned CI/CD pipelines and production deployments on AWS, improving release reliability and reducing manual deployment effort.}
+        \resumeItem{Contributed to an existing backend using HonoJS, PostgreSQL, and Drizzle ORM, shipping features in a live production environment.}
+        \resumeItem{Integrated and maintained Stripe payment workflows, supporting secure and reliable transaction processing.}
       \resumeItemListEnd
-      \resumeSubheading
-        {Fullstack Developer}{Jul 2024 -- Nov 2024}
-        {Minab IT Solutions}{Addis Ababa, Ethiopia}
-        \resumeItemListStart
-          \resumeItem{Design and implement a robust web-based administration panel that Hahujobs CMS uses.}
-          \resumeItem{Develop an SDK for ArifPay Integration using Golang.}
-          \resumeItem{Integrate Arifpay into the Internal Product.}
-        \resumeItemListEnd
     \resumeSubheading
-      {Backend Intern}{Jun 2024 - Sep 2024}
-      {Kuraz Technologies}{Addis Ababa, Ethiopia}
+      {Full Stack Engineer}{Mar 2025 -- Oct 2025}
+      {Bamboosim}{Sydney, Australia}
       \resumeItemListStart
-        \resumeItem{Develop a Payroll Management System}
-        \resumeItem{Led a team of 6 interns in developing assigned projects under the guidance of an advisor, ensuring successful execution and collaboration throughout the process.}
-    \resumeItemListEnd
-
-    % \resumeSubheading
-    %   {Artificial Intelligence Research Assistant}{May 2019 -- July 2019}
-    %   {Southwestern University}{Georgetown, TX}
-    %   \resumeItemListStart
-    %     \resumeItem{Explored methods to generate video game dungeons based off of \emph{The Legend of Zelda}}
-    %     \resumeItem{Developed a game in Java to test the generated dungeons}
-    %     \resumeItem{Contributed 50K+ lines of code to an established codebase via Git}
-    %     \resumeItem{Conducted  a human subject study to determine which video game dungeon generation technique is enjoyable}
-    %     \resumeItem{Wrote an 8-page paper and gave multiple presentations on-campus}
-    %     \resumeItem{Presented virtually to the World Conference on Computational Intelligence}
-    %   \resumeItemListEnd
-
+        \resumeItem{Spearheaded the development of key features for an ongoing project, delivering full-stack solutions using NestJS, React and Next.js.}
+        \resumeItem{Enhanced the e-commerce platform by integrating and optimizing Stripe and PayPal payment gateways, improving transaction capabilities. Worked with colleagues to craft a seamless integration between backend and frontend.}
+        \resumeItem{Engineered a high-priority, multi-environment relay queuing microservice using BullMQ and Redis to circumvent external API rate limits (2 requests/minute), ensuring seamless data flow and system reliability.}
+        \resumeItem{Implemented robust customer engagement features including a promo code discount system, a referral program, and a reward code functionality, driving user acquisition and retention.}
+        \resumeItem{Managed and executed application deployments to Google Cloud Platform (GCP) using Cloud Build for CI/CD pipelines and Cloud Run for containerized service hosting, ensuring efficient and scalable releases.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Full Stack Engineer}{Feb 2025 -- Dec 2025}
+      {Engida Travel Technologies}{Addis Ababa, Ethiopia}
+      \resumeItemListStart
+        \resumeItem{Led full-stack development of a bus ticketing system used by thousands in Ethiopia, utilizing React and NestJS.}
+        \resumeItem{Developed features for generating invoices, receipts, and tickets with cancellation and termination capabilities.}
+        \resumeItem{Integrated local payment systems including Telebirr, Chapa, and CBE, increasing payment option accessibility.}
+        \resumeItem{Engineered a ticketing module supporting millions of concurrent bookings with real-time availability updates.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Backend Developer Intern}{May 2024 -- Sep 2024}
+      {Ewenet Communications PLC}{Addis Ababa, Ethiopia}
+      \resumeItemListStart
+        \resumeItem{Demonstrated proficiency in NestJS, Express.js and API development.}
+        \resumeItem{Created a secure and robust backend service capable of withstanding stress.}
+        \resumeItem{Worked with colleagues to craft a seamless integration between backend and frontend.}
+        \resumeItem{Collaborated with cross-functional teams, enhancing communication and teamwork skills.}
+      \resumeItemListEnd
   \resumeSubHeadingListEnd
 
 
 %-----------PROJECTS-----------
 \section{Projects}
-    \resumeSubHeadingListStart
-\resumeProjectHeading
-  {\textbf{Mini CDC (Change Data Capture) Engine} $|$ \emph{Golang, PostgreSQL, pgx, Kafka}} {Apr 2026 -- Present}
-  \resumeItemListStart
-    \resumeItem{Built a lightweight embeddable CDC engine in Go that streams row-level changes directly from PostgreSQL WAL using logical replication.}
-    \resumeItem{Implemented a replication client using \texttt{pglogrepl} to consume and decode WAL events in real time via the \texttt{pgoutput} plugin.}
-    \resumeItem{Decoded logical replication output into structured \texttt{ChangeEvent} payloads for INSERT, UPDATE, and DELETE operations.}
-    \resumeItem{Designed a modular pipeline with a \texttt{PostgresSource}, buffered channel for backpressure, and a \texttt{KafkaSink} for downstream event distribution.}
-    \resumeItem{Implemented LSN acknowledgement after sink confirmation to prevent WAL disk bloat and guarantee at-least-once delivery.}
-    \resumeItem{Leveraged replication slots for resume-from-failure semantics, enabling the engine to recover and continue from the last confirmed LSN.}
-    \resumeItem{Handled connection drops with exponential backoff and jitter for long-running replication streams.}
-    \resumeItem{Presented the engine at a company hackathon, receiving interest from the CEO and Head of Engineering.}
-    \resumeItem{Authored a technical blog post detailing the architecture and internals — \href{https://kaleabalemayehu.github.io/blog/cdc}{\underline{Eve Doesn't Poll, She Listens}}.}
-  \resumeItemListEnd
-       \resumeProjectHeading
-         {\textbf{Payment Gateway Service} $|$ \emph{Golang, PostgreSQL, Docker, RabbitMQ, Echo}} {Dec 2025 -- Present}
-         \resumeItemListStart
-           \resumeItem{Built an idempotent payment service using Golang, PostgreSQL, and RabbitMQ.}
-           \resumeItem{Developed RESTful APIs using Go's \texttt{Echo} framework.}
-           \resumeItem{Implemented the \texttt{Transactional Outbox Pattern} to handle dual-write consistency and ensure idempotent message publishing.}
-           \resumeItem{Designed dynamic worker pools to process payments asynchronously and deliver results to client webhook endpoints.}
-           \resumeItem{Applied row-level locking to ensure data consistency and prevent race conditions during concurrent transactions.}
-           \resumeItem{Implemented retry queues and dead-letter queues to reliably handle failed payment events.}
-           \resumeItem{Containerized the full development environment using Docker and Docker Compose for consistent and reproducible builds.}
-          \resumeItemListEnd
-       \resumeProjectHeading
-         {\textbf{Araray} $|$ \emph{Node.js, Express, TypeScript, React, Redux, MongoDB, AWS S3, Docker}} {Oct 2025 -- Oct 2025}
-         \resumeItemListStart
-           \resumeItem{Built a full-stack Spotify-like music platform with a RESTful API backend and a React frontend.}
-          \resumeItem{Developed the backend using Node.js, Express, and TypeScript with full CRUD operations for song and playlist management.}
-          \resumeItem{Integrated AWS S3 for production file storage and local storage fallback for development.}
-          \resumeItem{Managed frontend state with Redux and Redux Saga for asynchronous side effects including playback, playlists, and statistics.}
-          \resumeItem{Built a statistics dashboard with artist and genre charts for visualizing the music library.}
-          \resumeItem{Containerized the full development environment using Docker and Docker Compose.}
-          \resumeItem{Deployed the frontend on Vercel and the API on Render — \href{https://araray.vercel.app}{araray.vercel.app} $|$ \href{https://araray.onrender.com}{araray.onrender.com}.}
-        \resumeItemListEnd
-      \resumeProjectHeading
-          {\textbf{Drivee} $|$ \emph{Golang, Vue.js, PostgreSQL, Docker, Memcached, TailwindCSS}} {May 2025 -- Present}
-          \resumeItemListStart
-            \resumeItem{Building a peer-to-peer car rental platform where users can list and rent vehicles.}
-            \resumeItem{Developed the backend using Go's \texttt{net/http} for REST APIs.}
-            \resumeItem{Created the frontend with Vue.js, using TailwindCSS, without any external UI libraries.}
-            \resumeItem{Added Google and Twitter (X) SSO for login and user data access.}
-            \resumeItem{Used Memcached to speed up response times by caching frequent API data.}
-          \resumeItemListEnd
-      \resumeProjectHeading
-          {\textbf{Eagle Commerce} $|$ \emph{Golang, NATS, MongoDB, Docker, Microservices}} {Jul 2025 -- Jul 2025}
-          \resumeItemListStart
-            \resumeItem{Designed and developed a distributed e-commerce backend using Hexagonal Architecture. The system consisted of \texttt{order-ms}, \texttt{payment-ms}, \texttt{product-ms}, \texttt{user-ms}, and an \texttt{api-gateway}.}
-            \resumeItem{Implemented RESTful APIs using \texttt{Go-Chi} across all services.}
-            \resumeItem{Utilized \texttt{NATS} for asynchronous, event-driven communication between services.}
-            \resumeItem{Built a robust API Gateway to proxy requests to services and enforce rate limiting.}
-            \resumeItem{Leveraged MongoDB for efficient document-based data storage across services.}
-          \resumeItemListEnd
-      \resumeProjectHeading
-            {\textbf{ Werewolf Game Bot } $|$ \emph{Go, PostgreSQL, Docker, Event-Driven Architecture, Pub/Sub}} {Aug 2025 -- Present}
-            \resumeItemListStart
-              \resumeItem{Engineered a feature-rich Telegram bot in Go, used by multiple active groups to play the game of Werewolf. The bot leverages a sophisticated state machine to manage the entire game lifecycle, including complex phases, roles, and player actions.}
-              \resumeItem{Architected the application using Clean Architecture principles and a custom Pub/Sub event broker to create a decoupled, concurrent, and maintainable codebase.}
-              \resumeItem{Authored a public blog post detailing the design and implementation of the event-driven model. \href{https://kaleabalemayehu.github.io/blog/pubsub/}{\underline{blog}.}}
-              \resumeItem{Drove a 4x reduction in hosting costs by analyzing performance and optimizing server resource allocation.}
-              \resumeItem{Integrated PostgreSQL for persistent data storage, using goose for schema management and sqlc to generate type-safe Go code from raw SQL, improving reliability and developer productivity.}
-              % \resumeItem{Containerized the complete development environment using Docker and Docker Compose to ensure consistent and reproducible builds.}
-    \resumeItemListEnd
-      \resumeProjectHeading
-          {\textbf{Foodopia} $|$  \emph{Nuxt.js, Golang, PostgreSQL, Hasura, Apollo GraphQL, Docker, Flowbite}} {Jun 2024 -- Jul 2024}
-          \resumeItemListStart
-            \resumeItem{Built a recipe-sharing platform with user authentication, recipe creation, editing, filtering, and bookmarking.}
-            \resumeItem{Used Hasura as the GraphQL engine and Gin (Go) for custom webhook handlers with a PostgreSQL database.}
-            \resumeItem{Developed the frontend using Nuxt.js with Flowbite as the UI component library.}
-          \resumeItemListEnd
-      \resumeProjectHeading
-          {\textbf{Pong} $|$ \emph{Golang, Go-Raylib}} {Mar 2025 -- Mar 2025}
-          \resumeItemListStart
-            \resumeItem{Built a multiplayer Pong game over LAN.}
-            \resumeItem{Developed the client side using Go-Raylib, a Go binding for the Raylib game library.}
-            \resumeItem{Created the server side with Golang and handled game state synchronization using UDP.}
-          \resumeItemListEnd
-      \resumeProjectHeading
-          {\textbf{Audiobook Downloader Bot} $|$ \emph{Grammy.js, TypeScript, JSDOM}} {Aug 2024}
-          \resumeItemListStart
-            \resumeItem{Built a Telegram bot that downloads audiobooks by scraping search results from the web.}
-            \resumeItem{Implemented inline keyboard interactions using Grammy.js and TypeScript.}
-            \resumeItem{Built a web scraper using JSDOM and the Fetch API to extract audiobook links from search results.}
-          \resumeItemListEnd
-    \resumeSubHeadingListEnd
-%
+  \resumeSubHeadingListStart
+    \resumeProject
+      {Wise}{Persistent memory for code explanations}
+      {TypeScript, SQLite, MCP, ts-morph}
+      {\href{https://wise.kaleab.site}{\underline{wise.kaleab.site}}}
+      \resumeItemListStart
+        \resumeItem{Built an MCP server exposing five tools to Claude Code, Cursor, and other AI clients, storing plain-English code explanations in SQLite outside the repo.}
+        \resumeItem{Used ts-morph AST fingerprinting so staleness tracks logic, not formatting --- changed code returns a diff to refresh instead of a full re-explanation.}
+        \resumeItem{Added opt-in in-code anchors that survive symbol renames and file moves, self-healing stored locators on read.}
+        \resumeItem{Shipped a VS Code extension (\texttt{.vsix}) with hover explanations, plus a localhost viewer with prose and code diffs.}
+        \resumeItem{Kept 216 tests green across three packages under one CI gate; caught a macOS/Linux platform bug and a $10\times$ oversized package before release.}
+      \resumeItemListEnd
+    \resumeProject
+      {Amiro}{Bookmark manager with curator attribution and AI tagging}
+      {TypeScript, Next.js, Convex, Chrome MV3, Turborepo}
+      {\href{https://amiro-web.vercel.app}{\underline{amiro-web.vercel.app}}}
+      \resumeItemListStart
+        \resumeItem{Designed a 19-table, 58-index Convex schema serving three clients --- Next.js 16 web app, Chrome MV3 extension, Telegram bot --- with 13 bearer-authed HTTP endpoints for the two that can't hold a reactive session.}
+        \resumeItem{Built a share-attribution graph that credits the curator who introduced a link: idempotent claim rows keep each (saver, bookmark) pair counted exactly once across four counter tables, an event log, and owner notifications.}
+        \resumeItem{Layered tagging in two tiers --- deterministic type tags at write time, then a cron-batched Gemini pass (40/run, model-fallback chain, daily quota) writing to a URL-canonicalised cache shared across users so a link is classified once globally.}
+        \resumeItem{Shipped an offline-first MV3 clipper: captures queue to \texttt{chrome.storage} and drain on a background alarm, plus one-click import of the browser's bookmark tree and Netscape HTML export.}
+      \resumeItemListEnd
+    \resumeProject
+      {Sewlesew}{Community crowdsourcing platform}
+      {React, Context API, NestJS, Express.js, PostgreSQL, Prisma, Docker}
+      {}
+      \resumeItemListStart
+        \resumeItem{Built a platform for individuals and businesses to launch campaigns and raise funds, with a secure backend managing campaigns, donations, and user interactions.}
+        \resumeItem{Integrated payment processing with transaction tracking and status updates, protected by authentication and authorization.}
+        \resumeItem{Added campaign status tracking, goal progress visualization, and donor anonymity options.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
 %-----------PROGRAMMING SKILLS-----------
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: Go, Typescript, Javascript, SQL (Postgres), Python, Lua, C/C++, HTML/CSS} \\
-     \textbf{Frameworks}{: Vue, React, Nuxt, Next, Gin, Echo, Hugo, Node.js, TaiwlindCSS, headless-UI, Shadcn/ui, flowbite} \\
-     \textbf{Developer Tools}{: Git, Docker, Neovim, Linux, Nix, VS Code} \\
-     \textbf{Technologies}{: Kafka, NATS, RabbitMQ, GraphQL, PostgreSQL, SQLite, MongoDB, Redis, Memcached} \\
+     \textbf{Languages}{: TypeScript, JavaScript, Dart, Python, Java} \\
+     \textbf{Frameworks}{: NestJS, Next.js, React, Vue, Node.js, HonoJS, Express.js, Flutter} \\
+     \textbf{Databases}{: PostgreSQL, MySQL, MongoDB, SQLite, Redis, Hive} \\
+     \textbf{Technologies}{: REST APIs, GraphQL, WebSockets, gRPC, tRPC} \\
+     \textbf{Tools \& Platforms}{: Docker, GCP, Prisma, Drizzle, TypeORM, BullMQ, Postman, Firebase, Git} \\
+    }}
+ \end{itemize}
+
+
+%-----------LANGUAGES-----------
+\section{Languages}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Amharic}{: Native} $|$ \textbf{English}{: Fluent (C1)}
     }}
  \end{itemize}
 
