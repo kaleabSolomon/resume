@@ -93,9 +93,18 @@
 \newcommand{\resumeProject}[4]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} --- \small#2 & \small#4 \\
-      \textit{\small#3} & \\
+      \textbf{\href{#2}{\underline{#1}}} --- \small#3 & \\
+      \textit{\small#4} & \\
     \end{tabular*}\vspace{-7pt}
+}
+
+% one-line job heading: title at company (linked), location | dates on the right;
+% the left side wraps onto a second line if the two don't fit
+\newcommand{\resumeJob}[5]{
+  \vspace{-2pt}\item
+    \begin{tabularx}{0.97\textwidth}[t]{@{}>{\raggedright\arraybackslash}X@{\hspace{1em}}r@{}}
+      \textbf{#1} at \href{#3}{\underline{#2}} & \small #4 $|$ #5 \\
+    \end{tabularx}\vspace{-7pt}
 }
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
@@ -140,9 +149,9 @@
 %-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
-    \resumeSubheading
-      {Backend Engineer}{Jan 2026 -- Present}
-      {EllaTech}{Addis Ababa, Ethiopia}
+    \resumeJob
+      {Backend Engineer}{EllaTech}{https://www.ellatech.co.uk}
+      {Addis Ababa, Ethiopia}{Jan 2026 -- Present}
       \resumeItemListStart
         \resumeItem{Developed and maintained Dockerized NestJS microservices with MongoDB, designed for scalable, distributed systems.}
         \resumeItem{Implemented gRPC and RabbitMQ based inter-service communication, improving service-to-service efficiency and reducing HTTP overhead.}
@@ -151,9 +160,9 @@
         \resumeItem{Contributed to an existing backend using HonoJS, PostgreSQL, and Drizzle ORM, shipping features in a live production environment.}
         \resumeItem{Integrated and maintained Stripe payment workflows, supporting secure and reliable transaction processing.}
       \resumeItemListEnd
-    \resumeSubheading
-      {Full Stack Engineer}{Mar 2025 -- Oct 2025}
-      {Bamboosim}{Sydney, Australia}
+    \resumeJob
+      {Full Stack Engineer}{Bamboosim}{https://bamboosim.com/en}
+      {Sydney, Australia}{Mar 2025 -- Oct 2025}
       \resumeItemListStart
         \resumeItem{Spearheaded the development of key features for an ongoing project, delivering full-stack solutions using NestJS, React and Next.js.}
         \resumeItem{Enhanced the e-commerce platform by integrating and optimizing Stripe and PayPal payment gateways, improving transaction capabilities. Worked with colleagues to craft a seamless integration between backend and frontend.}
@@ -161,18 +170,18 @@
         \resumeItem{Implemented robust customer engagement features including a promo code discount system, a referral program, and a reward code functionality, driving user acquisition and retention.}
         \resumeItem{Managed and executed application deployments to Google Cloud Platform (GCP) using Cloud Build for CI/CD pipelines and Cloud Run for containerized service hosting, ensuring efficient and scalable releases.}
       \resumeItemListEnd
-    \resumeSubheading
-      {Full Stack Engineer}{Feb 2025 -- Dec 2025}
-      {Engida Travel Technologies}{Addis Ababa, Ethiopia}
+    \resumeJob
+      {Full Stack Engineer}{Engida Travel Technologies}{https://engidatravel.com/home}
+      {Addis Ababa, Ethiopia}{Feb 2025 -- Dec 2025}
       \resumeItemListStart
         \resumeItem{Led full-stack development of a bus ticketing system used by thousands in Ethiopia, utilizing React and NestJS.}
         \resumeItem{Developed features for generating invoices, receipts, and tickets with cancellation and termination capabilities.}
         \resumeItem{Integrated local payment systems including Telebirr, Chapa, and CBE, increasing payment option accessibility.}
         \resumeItem{Engineered a ticketing module supporting millions of concurrent bookings with real-time availability updates.}
       \resumeItemListEnd
-    \resumeSubheading
-      {Backend Developer Intern}{May 2024 -- Sep 2024}
-      {Ewenet Communications PLC}{Addis Ababa, Ethiopia}
+    \resumeJob
+      {Backend Developer Intern}{Ewenet Communications PLC}{https://ewenet.net}
+      {Addis Ababa, Ethiopia}{May 2024 -- Sep 2024}
       \resumeItemListStart
         \resumeItem{Demonstrated proficiency in NestJS, Express.js and API development.}
         \resumeItem{Created a secure and robust backend service capable of withstanding stress.}
@@ -186,9 +195,8 @@
 \section{Projects}
   \resumeSubHeadingListStart
     \resumeProject
-      {Wise}{Persistent memory for code explanations}
+      {Wise}{https://wise.kaleab.site}{Persistent memory for code explanations}
       {TypeScript, SQLite, MCP, ts-morph}
-      {\href{https://wise.kaleab.site}{\underline{wise.kaleab.site}}}
       \resumeItemListStart
         \resumeItem{Built an MCP server exposing five tools to Claude Code, Cursor, and other AI clients, storing plain-English code explanations in SQLite outside the repo.}
         \resumeItem{Used ts-morph AST fingerprinting so staleness tracks logic, not formatting --- changed code returns a diff to refresh instead of a full re-explanation.}
@@ -197,9 +205,8 @@
         \resumeItem{Kept 216 tests green across three packages under one CI gate; caught a macOS/Linux platform bug and a $10\times$ oversized package before release.}
       \resumeItemListEnd
     \resumeProject
-      {Amiro}{Bookmark manager with curator attribution and AI tagging}
+      {Amiro}{https://amiro-web.vercel.app}{Bookmark manager with curator attribution and AI tagging}
       {TypeScript, Next.js, Convex, Chrome MV3, Turborepo}
-      {\href{https://amiro-web.vercel.app}{\underline{amiro-web.vercel.app}}}
       \resumeItemListStart
         \resumeItem{Designed a 19-table, 58-index Convex schema serving three clients --- Next.js 16 web app, Chrome MV3 extension, Telegram bot --- with 13 bearer-authed HTTP endpoints for the two that can't hold a reactive session.}
         \resumeItem{Built a share-attribution graph that credits the curator who introduced a link: idempotent claim rows keep each (saver, bookmark) pair counted exactly once across four counter tables, an event log, and owner notifications.}
@@ -207,9 +214,8 @@
         \resumeItem{Shipped an offline-first MV3 clipper: captures queue to \texttt{chrome.storage} and drain on a background alarm, plus one-click import of the browser's bookmark tree and Netscape HTML export.}
       \resumeItemListEnd
     \resumeProject
-      {Sewlesew}{Community crowdsourcing platform}
+      {Sewlesew}{https://sewlesew.vercel.app}{Community crowdsourcing platform}
       {React, Context API, NestJS, Express.js, PostgreSQL, Prisma, Docker}
-      {}
       \resumeItemListStart
         \resumeItem{Built a platform for individuals and businesses to launch campaigns and raise funds, with a secure backend managing campaigns, donations, and user interactions.}
         \resumeItem{Integrated payment processing with transaction tracking and status updates, protected by authentication and authorization.}
@@ -227,15 +233,6 @@
      \textbf{Databases}{: PostgreSQL, MySQL, MongoDB, SQLite, Redis, Hive} \\
      \textbf{Technologies}{: REST APIs, GraphQL, WebSockets, gRPC, tRPC} \\
      \textbf{Tools \& Platforms}{: Docker, GCP, Prisma, Drizzle, TypeORM, BullMQ, Postman, Firebase, Git} \\
-    }}
- \end{itemize}
-
-
-%-----------LANGUAGES-----------
-\section{Languages}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Amharic}{: Native} $|$ \textbf{English}{: Fluent (C1)}
     }}
  \end{itemize}
 
